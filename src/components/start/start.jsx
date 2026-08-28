@@ -267,7 +267,7 @@ export const StartMenu = () => {
                 rounded
                 width={26}
                 click="EXTERNAL"
-                payload="https://blueedge.me"
+                payload="https://github.com/smartworldarafath/Windows-11-Web-OS"
               />
               <div className="usName">{userName}</div>
             </div>

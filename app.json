@@ -1,10 +1,10 @@
 {
-  "name": "Win 11",
-  "description": "Win 11 in React",
-  "repository": "https://github.com/blueedgetechno/win11React",
-  "logo": "https://cdn.discordapp.com/icons/868499076432408627/330fbfea1aa14cc574e8d3053283ee72.png",
-  "keywords": ["Windows11", "React", "open-source"],
+  "name": "Windows 11 Web OS",
+  "description": "Windows 11 Web OS built with React, Redux, Vite, and TailwindCSS by Arafath Rahman",
+  "repository": "https://github.com/smartworldarafath/Windows-11-Web-OS",
+  "keywords": ["Windows11", "React", "Vite", "WebOS", "open-source"],
   "engines": {
-    "npm": "5.x"
+    "node": ">=16.x",
+    "npm": ">=8.x"
   }
 }

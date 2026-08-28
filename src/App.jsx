@@ -22,47 +22,56 @@ import * as Drafts from "./containers/applications/draft";
 
 function ErrorFallback({ error, resetErrorBoundary }) {
   return (
-    <div>
-      <meta charSet="UTF-8" />
-      <title>404 - Page</title>
-      <script src="https://win11.blueedge.me/script.js"></script>
-      <link rel="stylesheet" href="https://win11.blueedge.me/style.css" />
-      {/* partial:index.partial.html */}
-      <div id="page">
-        <div id="container">
-          <h1>:(</h1>
-          <h2>
-            Your PC ran into a problem and needs to restart. We're just
-            collecting some error info, and then we'll restart for you.
-          </h2>
-          <h2>
-            <span id="percentage">0</span>% complete
-          </h2>
-          <div id="details">
-            <div id="qr">
-              <div id="image">
-                <img src="https://win11.blueedge.me/img/qr.png" alt="QR Code" />
-              </div>
-            </div>
-            <div id="stopcode">
-              <h4>
-                For more information about this issue and possible fixes, visit
-                <br />{" "}
-                <a href="https://github.com/smartworldarafath/Windows-11-Web-OS/issues">
-                  https://github.com/smartworldarafath/Windows-11-Web-OS/issues
-                </a>{" "}
-              </h4>
-              <h5>
-                If you call a support person, give them this info:
-                <br />
-                Stop Code: {error.message}
-              </h5>
-              <button onClick={resetErrorBoundary}>Try again</button>
-            </div>
-          </div>
-        </div>
+    <div
+      style={{
+        background: "#0078d7",
+        color: "#ffffff",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "10%",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        boxSizing: "border-box",
+      }}
+    >
+      <div style={{ fontSize: "7rem", marginBottom: "1rem" }}>:(</div>
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "300", lineHeight: "1.4" }}>
+        Your PC ran into a problem and needs to restart. We're just collecting some
+        error info, and then we'll restart for you.
+      </h2>
+      <div style={{ marginTop: "2rem" }}>
+        <h4 style={{ fontSize: "1rem", fontWeight: "400" }}>
+          For more information about this issue, visit:{" "}
+          <a
+            href="https://github.com/smartworldarafath/Windows-11-Web-OS/issues"
+            style={{ color: "#fff", textDecoration: "underline" }}
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://github.com/smartworldarafath/Windows-11-Web-OS/issues
+          </a>
+        </h4>
+        <h5 style={{ fontSize: "0.85rem", opacity: 0.85, marginTop: "0.5rem" }}>
+          Stop Code: {error.message || "UNEXPECTED_KERNEL_TRAP"}
+        </h5>
+        <button
+          onClick={resetErrorBoundary}
+          style={{
+            marginTop: "1.5rem",
+            padding: "8px 24px",
+            background: "rgba(255,255,255,0.2)",
+            border: "1px solid #fff",
+            color: "#fff",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "0.9rem",
+          }}
+        >
+          Try again
+        </button>
       </div>
-      {/* partial */}
     </div>
   );
 }

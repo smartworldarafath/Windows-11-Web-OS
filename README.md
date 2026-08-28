@@ -1,154 +1,129 @@
-# Win11React
+# Windows 11 Web OS
 
-[![Follow me](https://img.shields.io/github/followers/blueedgetechno?label=follow%20me&style=social)](https://github.com/blueedgetechno)
-[![Follow Twitter](https://img.shields.io/twitter/follow/blueedgetechno?label=Follow%20me&style=social)](https://twitter.com/blueedgetechno)
-[![Join](https://img.shields.io/discord/868499076432408627.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/NcjaNdwtnR)
-[![Build & Deploy](https://github.com/blueedgetechno/win11React/actions/workflows/deploy.yml/badge.svg)](https://github.com/blueedgetechno/win11React/actions/workflows/Build-Deploy.yml)
-[![PR Preview](https://github.com/blueedgetechno/win11React/actions/workflows/pr-preview.yml/badge.svg)](https://github.com/blueedgetechno/win11React/actions/workflows/PR-Preview.yml)
-![Uptime](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/win11react/status/master/api/win11-react/uptime.json)
-[![Translate](https://badges.crowdin.net/win11react/localized.svg)](https://translate.win11react.com/)
+An interactive, responsive, and full-featured replica of the Windows 11 desktop experience running right in your web browser. Built with **React 18**, **Redux**, **Vite**, **Sass (SCSS)**, and **TailwindCSS**.
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/blueedgetechno)
-
-This open source project is made in the hope to replicate the Windows 11 desktop experience on web, using standard web technologies like React, CSS (SCSS), and JS.
-
-## Notice
-
-> This project is **not in anyway affiliated with Microsoft** and **should not be confused with Microsoft’s Operating System** or Products.
-> This is **not** a Windows 365 cloud PC.
-
-**THIS IS NOT THE APP STORE REPO**:
-[App Store](https://github.com/win11react/store)
-
-**Documentation**:
-https://win11react-docs.andrewstech.me/
-
-## _This project is still a work in progress._
-
-#### Live Experience🌈: [win11.blueedge.me](https://win11.blueedge.me)
-
-![Home](./public/img/home.jpg)
-
-## Translation
-
-You can find other language versions of Win11React here.
-
-Simplified Chinese(**[中文简体](https://github.com/inwinter04/win11React_CN)**)
-
-# Gallery
-
-![image](https://user-images.githubusercontent.com/89068816/154832868-6ec81a0b-0bc3-4e77-a4bf-3391b852fe9c.png)
-
-![pic1](./public/img/gallery2.jpg)
-
-![image](https://user-images.githubusercontent.com/89068816/154832942-b3e435dd-5fe4-4bc1-a9be-34262698625d.png)
-
-# Why
-
-WHY NOT? Why not just waste a week of your life creating a React project, just to cover up your insecurities of how incompetent you are. Just why not!
-
-# Features
-
-- [x] Start Menu, Search Menu and Widgets
-- [x] Desktop and Right Click action
-- [x] Side Navigation and Calendar View
-- [x] Snap windows in different layouts
-- [x] Browser, Store, Terminal, Calculator
-- [x] Notepad, Vscode, Whiteboard
-- [x] File Explorer + Setting
-- [x] Drag and Resize windows
-- [x] Startup and Lock screen
-- [x] Themes and Background
-- [x] Multilang Support
-
-📑 [Suggest More](https://github.com/blueedgetechno/win11React/issues/new/choose)
-
-# Stack
-
-- Framework - React (^17.0.2) + Redux
-- Component/UI Library - None!!
-- Styling Solution - SCSS and CSS Modules (tailwind).
-- Icons - fontawesome
-
-## FAQ
-
-- Is this the full operating system?
-  - No, This is not a full operating system and It is also not affiliated by Microsoft in anyway.
-- How long did it take?
-  - Honestly It took 2-3 days collecting assets, 2-3 planning and about 6 days programming it.
-- Did you use any UI/Library?
-  - No.
-- Can I contribute?
-  - Yes, you can! Open an issue, create a pull request, head over to [discussions](https://github.com/blueedgetechno/win11React/discussions) or join the [Discord](https://discord.gg/NcjaNdwtnR).
-- Where did you get the inspiration from, if you have?
-  - I got the inspiration from [this youtube video](https://www.youtube.com/watch?v=OtOmxa9UMe8).
-- What is the answer of Life, the Universe, and Everything?
-  - 42
-
-![Answer](./public/answer.png)
-
-## 🌟 Star this project
-
-### [⏫ Scroll to the ⭐️ button](#start-of-content)
-
-If you believe this project has potential, feel free to **star this repo** just like many amazing people have 👇
-![](https://user-images.githubusercontent.com/89068816/188550244-3cd2bca6-7135-418f-9dcd-25ea6bd96d5f.gif)
-
-## Local Deployment
-
-# Docker
-
-To use docker use the following command:
-`docker run -d --restart unless-stopped --name win11react -p 3000:3000 blueedge/win11react:latest`
-
-# Home Assistant
-
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Funofficial-skills%2Faddons)
-
-# Balena-Cloud
-
-[![Balena Deploy Button](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/blueedgetechno/win11React)
+Developed and maintained by **[Arafath Rahman](https://github.com/smartworldarafath)**.
 
 ---
 
-# Compiled
+## 📸 Screenshots & Preview
 
-You can find a compiled `.exe` in the **Releases** section or via clicking [HERE](https://github.com/blueedgetechno/win11React/releases)
+![Windows 11 Web OS Home](./public/img/home.jpg)
 
-**WINGET - WINDOWS PACKAGE MANAGER**
-If you have one of the latest windows builds then you can enter the command below in **CMD**
+---
 
-`winget install blueedge.win11react`
+## ✨ Features & Enhancements
 
-## Online Deployment
+### 📂 File Explorer (This PC & Full File Operations)
+- **This PC View**: Displays storage capacity progress bars for `OS (C:)` and `Data (D:)` along with user libraries (Desktop, Documents, Downloads, Music, Pictures, Videos).
+- **File CRUD Operations**: Create **New Folder** and **New Text Document**, **Rename**, **Delete**, **Cut**, **Copy**, and **Paste**.
+- **Interactive Context Menu**: Right-click context menus for files, folders, and empty directory backgrounds.
+- **Path Breadcrumbs & Search**: Live directory hierarchy and instantaneous file filtering.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+### 🖥️ Draggable Desktop Applications
+- Freely drag desktop app icons to any position on the screen.
+- Auto-snapping to the nearest grid cell on release.
+- Icon positions are automatically preserved in `localStorage`.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fblueedgetechno%2Fwin11React&envs=PORT&PORTDesc=Port+of+the+application&PORTDefault=3000&referralCode=BatemaDevelopment)
+### 🌐 Web Browsers
+- **Google Chrome**: Full browser experience with dynamic tab creation, close tabs, omnibox with Google search queries, and quick bookmarks bar.
+- **Microsoft Edge**: In-browser web viewer with navigation controls and web bookmarks.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/blueedgetechno/win11React)
+### 🛍️ Microsoft Store
+- Browse **Featured Apps**, **Featured Games**, and **Featured Films**.
+- Interactive Detail Pages with screenshots, ratings, reviews, and package descriptions.
+- Instant app install and launch flow.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fblueedgetechno%2Fwindows11%2F&project-name=windows11&repo-name=windows11-react&demo-title=Windows%2011%20Demo&demo-description=Static&demo-url=https%3A%2F%2Fwin11.blueedge.me%2F)
+### 🛠️ Built-in Windows 11 Native Apps
+- **Clock**:
+  - ⏱️ **Stopwatch** with lap tracking and split time records.
+  - ⏳ **Timer** with countdown ring animation and quick presets (1m, 3m, 5m, 10m, 15m, 30m).
+  - ⏰ **Alarms** with toggle switches.
+  - 🌐 **World Clock** with live times for Dhaka, New York, London, Tokyo, Paris, Dubai.
+- **Paint**: HTML5 drawing canvas with Pencil, Brush, Eraser, Shapes (Line, Rect, Circle), 16-color palette, custom color picker, stroke size selector, Undo, and Save/Download image as PNG.
+- **Voice Recorder**: Audio recording with live animated frequency waveform visualizer, playback controls, and recording manager.
+- **Weather**: Live current weather overview, hourly forecast, 7-day extended forecast, city search (Dhaka, New York, London, Tokyo, etc.), and °C / °F toggle.
+- **Calculator**: Standard and scientific arithmetic operations.
+- **Camera**: Live camera view and snapshot photo capture.
+- **Notepad**: Text editor with file save and editing capabilities.
+- **Terminal (Command Prompt / PowerShell)**: Interactive command line with custom commands and system info.
 
-## Contributors
+### ⚙️ Settings & Personalization
+- Personalized system specs showing **ARAFATH-PC** and **Windows 11 Web OS**.
+- Light and Dark theme switching with authentic Windows 11 Mica / Acrylic blur effects.
+- Wallpaper collection with live theme application.
 
-<a href="https://github.com/blueedgetechno/win11React/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=blueedgetechno/win11React" />
-</a>
+### 🚀 Desktop & Shell UI
+- **Start Menu**: Pinned apps, recommended files, user profile, and power options.
+- **Taskbar**: Centered app icons, active window indicators, and pinned shortcuts.
+- **Action Center & Quick Settings**: Wi-Fi, Bluetooth, Airplane mode, Battery saver, Brightness, and Volume sliders.
+- **Notification Center & Calendar**: Interactive calendar widget and notifications.
+- **Widgets Pane**: Live news and widget cards.
+- **Window Management**: Maximize, minimize, custom resize, draggable window header, and snap layouts.
 
-### Known Issues
+---
 
-- Blur not working in Firefox browser.
+## 🛠️ Tech Stack
 
-###### Solution:
+- **Frontend**: React 18
+- **State Management**: Redux
+- **Build Tool / Bundler**: Vite
+- **Styling**: Sass (SCSS) + CSS Modules + TailwindCSS
+- **Icons**: FontAwesome & SVG Windows Icons
 
-1. Open `about:config` in your firefox browser.
-2. Search for `layout.css.backdrop-filter.enabled` and set it to `true`.
+---
 
-## License
+## 🚀 Getting Started (Local Development)
 
-⚖️ CC0-1.0 License
+Follow these steps to run the project locally on your machine:
 
-## Sharing
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm or yarn
 
-Although our license does allow for this project to be reposted, modified and shared without permission from us, we do kindly ask that credits are given to the original GitHub page and the Win11 react team when reposting the project publicly.
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/smartworldarafath/Windows-11-Web-OS.git
+   cd Windows-11-Web-OS
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+4. **Open in browser:**
+   Navigate to `http://localhost:5173/` in your browser.
+
+### Building for Production
+```bash
+npm run build
+```
+
+---
+
+## 👨‍💻 Developer & Author
+
+- **Developer**: [Arafath Rahman](https://github.com/smartworldarafath)
+- **GitHub**: [@smartworldarafath](https://github.com/smartworldarafath)
+- **Repository**: [https://github.com/smartworldarafath/Windows-11-Web-OS](https://github.com/smartworldarafath/Windows-11-Web-OS)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [CC0-1.0 License](LICENSE).
+
+---
+
+## ⚠️ Disclaimer
+
+This project is an open-source web simulation created for educational and experimental purposes. It is not affiliated with, sponsored by, or endorsed by Microsoft Corporation. Windows and related trademarks are properties of Microsoft Corporation.
+
