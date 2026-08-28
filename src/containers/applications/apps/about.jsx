@@ -37,6 +37,16 @@ export const AboutWin = () => {
           Developer: <strong>Arafath Rahman</strong>
         </p>
         <p>
+          Live Demo:&nbsp;
+          <a
+            target="_blank"
+            href="https://smartworldarafath.github.io/Windows-11-Web-OS/"
+            rel="noreferrer"
+          >
+            smartworldarafath.github.io/Windows-11-Web-OS
+          </a>
+        </p>
+        <p>
           Repository:&nbsp;
           <a
             target="_blank"
