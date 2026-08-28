@@ -47,11 +47,10 @@ const apps = [
     action: "MSEDGE",
   },
   {
-    name: "Buy me a coffee",
-    icon: "buyme",
+    name: "Google Chrome",
+    icon: "chrome",
     type: "app",
-    action: "EXTERNAL",
-    payload: "https://www.buymeacoffee.com/blueedgetechno",
+    action: "CHROME",
   },
   {
     name: "Store",
@@ -63,17 +62,19 @@ const apps = [
     name: "Recycle Bin",
     icon: "bin0",
     type: "app",
+    action: "RECYCLEBIN",
   },
   {
-    name: "Blue",
+    name: "Arafath",
     icon: "win/user",
     type: "app",
     action: "EXPLORER",
   },
   {
-    name: "Alarms",
+    name: "Clock",
     icon: "alarm",
     type: "app",
+    action: "CLOCK",
   },
   {
     name: "Calculator",
@@ -85,6 +86,7 @@ const apps = [
     name: "Calendar",
     icon: "calendar",
     type: "app",
+    action: "CALENDAR",
   },
   {
     name: "Camera",
@@ -118,7 +120,7 @@ const apps = [
     icon: "help",
     type: "app",
     action: "EXTERNAL",
-    payload: "https://win11react-docs.andrewstech.me/",
+    payload: "https://github.com/smartworldarafath/Windows-11-Web-OS#readme",
   },
   {
     name: "Yammer",
@@ -130,7 +132,7 @@ const apps = [
     icon: "mail",
     type: "app",
     action: "EXTERNAL",
-    payload: "mailto:blueedgetechno@gmail.com",
+    payload: "mailto:arafath.rahman@example.com",
   },
   {
     name: "Movies",
@@ -192,13 +194,12 @@ const apps = [
     name: "Photos",
     icon: "photos",
     type: "app",
+    action: "PHOTOS",
   },
   {
     name: "Pinterest",
     icon: "pinterest",
     type: "app",
-    action: "EXTERNAL",
-    payload: "https://www.pinterest.com/blueedgetechno/",
   },
   {
     name: "Security",
@@ -230,8 +231,6 @@ const apps = [
     name: "Twitter",
     icon: "twitter",
     type: "app",
-    action: "EXTERNAL",
-    payload: "https://twitter.com/blueedgetechno",
   },
   {
     name: "Teams",
@@ -263,11 +262,19 @@ const apps = [
     name: "Voice Recorder",
     icon: "voice",
     type: "app",
+    action: "VOICEREC",
   },
   {
     name: "Weather",
     icon: "weather",
     type: "app",
+    action: "WEATHER",
+  },
+  {
+    name: "Paint",
+    icon: "paint",
+    type: "app",
+    action: "PAINT",
   },
   {
     name: "Whiteboard",
@@ -285,14 +292,7 @@ const apps = [
     icon: "github",
     type: "app",
     action: "EXTERNAL",
-    payload: "https://github.com/blueedgetechno/win11React",
-  },
-  {
-    name: "Unescape",
-    icon: "unescape",
-    type: "action",
-    action: "EXTERNAL",
-    payload: "https://blueedge.me/unescape",
+    payload: "https://github.com/smartworldarafath/Windows-11-Web-OS",
   },
   {
     name: "Discord",

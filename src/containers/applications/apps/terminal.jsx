@@ -270,30 +270,30 @@ export const WnTerminal = () => {
     } else if (type == "title") {
       setWntitle(arg.length ? arg : "Terminal");
     } else if (type == "hostname") {
-      tmpStack.push("blue");
+      tmpStack.push("ARAFATH-PC");
     } else if (type == "login") {
       login();
       tmpStack.push("started login");
     } else if (type == "lang-test") {
       i18next.changeLanguage("fr-FR");
       tmpStack.push("French");
-    } else if (type == "blue") {
-      tmpStack.push("blueedgetechno");
+    } else if (type == "arafath" || type == "blue") {
+      tmpStack.push("Arafath Rahman");
     } else if (type == "dev") {
-      tmpStack.push("https://dev.blueedge.me/");
+      tmpStack.push("https://github.com/smartworldarafath/Windows-11-Web-OS");
     } else if (type == "ver") {
-      tmpStack.push("OS [Version 10.0.22000.51]");
+      tmpStack.push("Windows 11 Web OS [Version 10.0.22000.51]");
     } else if (type == "systeminfo") {
       var dvInfo = [
-        "Host Name:                 BLUE",
-        "OS Name:                   Win11React Dummys Edition",
+        "Host Name:                 ARAFATH-PC",
+        "OS Name:                   Windows 11 Web OS Pro",
         "OS Version:                10.0.22000 N/A Build 22000.51",
-        "OS Manufacturer:           ",
+        "OS Manufacturer:           Arafath Rahman",
         "OS Configuration:          Standalone Workstation",
         "OS Build Type:             Multiprocessor Free",
-        "Registered Owner:          Blue",
+        "Registered Owner:          Arafath Rahman",
         "Registered Organization:   N/A",
-        "Product ID:                7H1S1-5AP1R-473DV-3R5I0N",
+        "Product ID:                ARAFATH-WIN11-PRO-WEBOS",
       ];
 
       for (var i = 0; i < dvInfo.length; i++) {

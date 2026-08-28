@@ -34,20 +34,16 @@ export const AboutWin = () => {
         <div className="text-xl font-semibold">{t("about.title")}</div>
         <p>{t("about.opensource")}</p>
         <p>
-          {t("about.licensed")}&nbsp;
+          Developer: <strong>Arafath Rahman</strong>
+        </p>
+        <p>
+          Repository:&nbsp;
           <a
             target="_blank"
-            href="https://github.com/blueedgetechno/win11React/blob/master/LICENSE"
+            href="https://github.com/smartworldarafath/Windows-11-Web-OS"
             rel="noreferrer"
           >
-            {t("about.Creative-Commons")}
-          </a>
-          .
-        </p>
-        <p className="pl-4">
-          {t("about.contact")} :&nbsp;
-          <a target="_blank" href="mailto:blue@win11react.com" rel="noreferrer">
-            blue@win11react.com
+            smartworldarafath/Windows-11-Web-OS
           </a>
         </p>
 

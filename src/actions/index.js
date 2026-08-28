@@ -257,10 +257,17 @@ export const loadSettings = () => {
 // mostly file explorer
 export const handleFileOpen = (id) => {
   // handle double click open
-  const item = store.getState().files.data.getId(id);
+  const files = store.getState().files;
+  const item = files.data.getId(id);
   if (item != null) {
-    if (item.type == "folder") {
+    if (item.type === "folder" || item.type === "thispc") {
       store.dispatch({ type: "FILEDIR", payload: item.id });
+    } else {
+      var name = (item.name || "").toLowerCase();
+      var ext = name.includes(".") ? name.split(".").pop() : "";
+      if (["txt", "md", "log", "cfg", "json", "js", "html", "css", "py", "c", "cpp"].includes(ext) || item.data) {
+        store.dispatch({ type: "NOTEPAD", payload: "full" });
+      }
     }
   }
 };

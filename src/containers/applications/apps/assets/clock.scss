@@ -1,0 +1,25 @@
+.clockApp {
+  background: var(--bg1);
+  color: var(--txt-col);
+
+  .clockNav {
+    .navItem {
+      color: var(--med-txt);
+      transition: all 0.15s ease;
+
+      &:hover {
+        background: rgba(136, 136, 136, 0.15);
+        color: var(--txt-col);
+      }
+
+      &.active {
+        background: #0078d4;
+        color: #fff;
+      }
+    }
+  }
+
+  .clockContent {
+    background: var(--bg1);
+  }
+}

@@ -48,8 +48,8 @@ function ErrorFallback({ error, resetErrorBoundary }) {
               <h4>
                 For more information about this issue and possible fixes, visit
                 <br />{" "}
-                <a href="https://github.com/blueedgetechno/win11React/issues">
-                  https://github.com/blueedgetechno/win11React/issues
+                <a href="https://github.com/smartworldarafath/Windows-11-Web-OS/issues">
+                  https://github.com/smartworldarafath/Windows-11-Web-OS/issues
                 </a>{" "}
               </h4>
               <h5>

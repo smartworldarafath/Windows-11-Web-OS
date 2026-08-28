@@ -46,13 +46,127 @@ export const DesktopApp = () => {
   });
   const dispatch = useDispatch();
 
+  const [positions, setPositions] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("deskPositions") || "{}");
+    } catch (e) {
+      return {};
+    }
+  });
+
+  const [draggingApp, setDraggingApp] = useState(null); // { name, startX, startY, origLeft, origTop, currentLeft, currentTop, moved: bool }
+
+  const CELL_WIDTH = 84;
+  const CELL_HEIGHT = 94;
+  const OFFSET_X = 12;
+  const OFFSET_Y = 12;
+
+  const getAppPos = (app, index) => {
+    if (draggingApp && draggingApp.name === app.name) {
+      return { left: draggingApp.currentLeft, top: draggingApp.currentTop };
+    }
+    if (positions[app.name]) {
+      return {
+        left: positions[app.name].left !== undefined ? positions[app.name].left : OFFSET_X + positions[app.name].col * CELL_WIDTH,
+        top: positions[app.name].top !== undefined ? positions[app.name].top : OFFSET_Y + positions[app.name].row * CELL_HEIGHT,
+      };
+    }
+    // Default vertical column stacking
+    var rowsPerCol = Math.max(1, Math.floor((window.innerHeight - 80) / CELL_HEIGHT));
+    var col = Math.floor(index / rowsPerCol);
+    var row = index % rowsPerCol;
+    return {
+      left: OFFSET_X + col * CELL_WIDTH,
+      top: OFFSET_Y + row * CELL_HEIGHT,
+    };
+  };
+
+  const handleMouseDown = (e, app, index) => {
+    if (e.button !== 0) return; // Only primary mouse button
+    var pos = getAppPos(app, index);
+    setDraggingApp({
+      name: app.name,
+      startX: e.clientX,
+      startY: e.clientY,
+      origLeft: pos.left,
+      origTop: pos.top,
+      currentLeft: pos.left,
+      currentTop: pos.top,
+      moved: false,
+    });
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!draggingApp) return;
+      var dx = e.clientX - draggingApp.startX;
+      var dy = e.clientY - draggingApp.startY;
+      var moved = draggingApp.moved || Math.hypot(dx, dy) > 4;
+
+      setDraggingApp((prev) =>
+        prev
+          ? {
+              ...prev,
+              currentLeft: prev.origLeft + dx,
+              currentTop: prev.origTop + dy,
+              moved: moved,
+            }
+          : null,
+      );
+    };
+
+    const handleMouseUp = () => {
+      if (!draggingApp) return;
+      if (draggingApp.moved) {
+        // Snap to nearest grid
+        var snappedCol = Math.max(0, Math.round((draggingApp.currentLeft - OFFSET_X) / CELL_WIDTH));
+        var snappedRow = Math.max(0, Math.round((draggingApp.currentTop - OFFSET_Y) / CELL_HEIGHT));
+        var snappedLeft = OFFSET_X + snappedCol * CELL_WIDTH;
+        var snappedTop = OFFSET_Y + snappedRow * CELL_HEIGHT;
+
+        var newPos = {
+          ...positions,
+          [draggingApp.name]: {
+            col: snappedCol,
+            row: snappedRow,
+            left: snappedLeft,
+            top: snappedTop,
+          },
+        };
+        setPositions(newPos);
+        localStorage.setItem("deskPositions", JSON.stringify(newPos));
+      }
+      setDraggingApp(null);
+    };
+
+    if (draggingApp) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    }
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [draggingApp, positions]);
+
   return (
     <div className="desktopCont">
       {!deskApps.hide &&
         deskApps.apps.map((app, i) => {
+          var pos = getAppPos(app, i);
+          var isDraggingThis = draggingApp && draggingApp.name === app.name && draggingApp.moved;
+
           return (
-            // to allow it to be focusable (:focus)
-            <div key={i} className="dskApp" tabIndex={0}>
+            <div
+              key={app.name || i}
+              className={`dskApp ${isDraggingThis ? "isDragging" : ""}`}
+              tabIndex={0}
+              style={{
+                left: `${pos.left}px`,
+                top: `${pos.top}px`,
+              }}
+              onMouseDown={(e) => handleMouseDown(e, app, i)}
+            >
               <Icon
                 click={app.action}
                 className="dskIcon prtclk"

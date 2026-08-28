@@ -323,3 +323,208 @@
 .hvtheme:hover {
   background: var(--hover-bg);
 }
+
+.thispcCont {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+
+  .thispcTitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--txt-col);
+    margin: 1rem 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+    display: flex;
+    align-items: center;
+  }
+
+  .thispcGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .thispcFolderCard {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(136, 136, 136, 0.15);
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: rgba(136, 136, 136, 0.3);
+    }
+
+    .folderName {
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-left: 10px;
+      color: var(--txt-col);
+    }
+  }
+
+  .thispcDrivesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .driveCard {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(136, 136, 136, 0.15);
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: rgba(136, 136, 136, 0.3);
+    }
+
+    .driveInfo {
+      margin-left: 12px;
+      flex-grow: 1;
+
+      .driveName {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--txt-col);
+      }
+
+      .driveBar {
+        width: 100%;
+        height: 6px;
+        background: rgba(136, 136, 136, 0.3);
+        border-radius: 3px;
+        margin: 6px 0;
+        overflow: hidden;
+
+        .driveFill {
+          height: 100%;
+          background: #0078d4;
+          border-radius: 3px;
+        }
+      }
+
+      .driveSpace {
+        font-size: 0.72rem;
+        color: var(--med-txt);
+      }
+    }
+  }
+}
+
+.fileContextMenu {
+  position: fixed;
+  z-index: 99999;
+  background: var(--bg1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(136, 136, 136, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 6px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+
+  .ctxItem {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    color: var(--txt-col);
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      background: var(--hover-bg);
+    }
+
+    svg, img {
+      margin-right: 10px;
+    }
+  }
+
+  .ctxDivider {
+    height: 1px;
+    background: rgba(136, 136, 136, 0.2);
+    margin: 4px 0;
+  }
+}
+
+.renameDialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(136, 136, 136, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  padding: 16px 20px;
+  z-index: 100000;
+  min-width: 280px;
+
+  h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--txt-col);
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    border: 1px solid rgba(136, 136, 136, 0.4);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--txt-col);
+    font-size: 13px;
+    margin-bottom: 14px;
+
+    &:focus {
+      outline: 2px solid #0078d4;
+    }
+  }
+
+  .dialogBtns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+
+    button {
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+
+      &.primary {
+        background: #0078d4;
+        color: white;
+        border: none;
+      }
+
+      &.secondary {
+        background: transparent;
+        border: 1px solid rgba(136, 136, 136, 0.4);
+        color: var(--txt-col);
+      }
+    }
+  }
+}
+

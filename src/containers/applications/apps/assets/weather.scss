@@ -1,0 +1,12 @@
+.weatherApp {
+  background: var(--bg1);
+  color: var(--txt-col);
+
+  .overviewCard,
+  .hourlyCard,
+  .dailyCard,
+  .metricCard {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}

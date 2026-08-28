@@ -6,57 +6,61 @@ var { taskbar, desktop, pinned, recent } = {
     "Settings",
     "File Explorer",
     "Browser",
+    "Google Chrome",
     "Store",
     "Spotify",
   ],
   desktop: (localStorage.getItem("desktop") &&
     JSON.parse(localStorage.getItem("desktop"))) || [
-    "Blue",
-    "Unescape",
+    "Arafath",
     "Recycle Bin",
     "File Explorer",
     "Store",
     "Browser",
+    "Google Chrome",
     "Github",
+    "Calculator",
+    "Camera",
+    "Paint",
+    "Clock",
+    "Weather",
+    "Voice Recorder",
+    "Notepad",
     "Spotify",
-    "Buy me a coffee",
+    "Terminal",
+    "Settings",
   ],
   pinned: (localStorage.getItem("pinned") &&
     JSON.parse(localStorage.getItem("pinned"))) || [
     "Browser",
+    "Google Chrome",
     "Get Started",
     "Task Manager",
-    "Mail",
     "Settings",
     "Store",
-    "Unescape",
-    "Buy me a coffee",
     "Notepad",
-    "Whiteboard",
+    "Paint",
     "Calculator",
+    "Camera",
+    "Clock",
+    "Weather",
+    "Voice Recorder",
     "Spotify",
-    "Twitter",
     "File Explorer",
     "Terminal",
     "Github",
     "Discord",
-    "Camera",
   ],
   recent: (localStorage.getItem("recent") &&
     JSON.parse(localStorage.getItem("recent"))) || [
-    "Mail",
-    "Twitter",
+    "Google Chrome",
+    "File Explorer",
     "Terminal",
     "Github",
-    "File Explorer",
     "Spotify",
-    "Edge",
+    "Browser",
   ],
 };
-
-if (desktop.includes("Buy me a coffee") === false) {
-  desktop.push("Buy me a coffee");
-}
 
 export const taskApps = icons.filter((x) => taskbar.includes(x.name));
 
@@ -88,3 +92,4 @@ export const dfApps = {
   pinned,
   recent,
 };
+

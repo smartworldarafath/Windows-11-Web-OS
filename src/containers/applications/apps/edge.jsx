@@ -12,21 +12,16 @@ export const EdgeMenu = () => {
 
   const iframes = {
     "https://www.google.com/webhp?igu=1": "Google",
-    "https://bing.com": "Bing",
-    "https://www.youtube.com/embed/m0EHSoZzHEA": "Youtube",
-    "https://blueedge.me": "blueedge",
-    "https://andrewstech.me": "\nandrewstech",
-    "https://blueedge.me/unescape": "Unescape",
-    "https://win11.blueedge.me": "Inception",
-    "https://open.spotify.com/embed/user/jhfivkgdtg4s97pwbo1rbvr9v/playlist/6IdR78TOog83PV4XhLDvWN":
-      "Spotify",
-    "https://bluelab.blueedge.me": "BlueLab",
-    "https://othello.blueedge.me": "Othello",
+    "https://www.bing.com": "Bing",
+    "https://www.wikipedia.org": "Wikipedia",
+    "https://devdocs.io": "DevDocs",
+    "https://www.youtube.com/embed/dQw4w9WgXcQ": "YouTube",
+    "https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXcBWIGoYBM5M": "Spotify",
   };
 
   const favicons = {
-    "https://andrewstech.me":
-      "https://avatars.githubusercontent.com/u/45342431",
+    "https://www.wikipedia.org": "https://www.wikipedia.org/static/favicon/wikipedia.ico",
+    "https://devdocs.io": "https://devdocs.io/favicon.ico",
   };
 
   const isValidURL = (string) => {

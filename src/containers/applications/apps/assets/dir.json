@@ -125,7 +125,7 @@
   "Users": {
     "Default": {},
     "Public": {},
-    "Blue": {
+    "Arafath": {
       "AppData": {},
       "config.cfg": {},
       "Contacts": {},
@@ -155,7 +155,7 @@
       "Searches": {},
       "StartMenu": {},
       "supersecret.txt": {
-        "content": "github: github.com/blueedgetechno\nwebsite: blueedge.me"
+        "content": "Developer: Arafath Rahman\nGitHub: https://github.com/smartworldarafath/Windows-11-Web-OS"
       },
       "Templates": {},
       "VirtualBoxVMs": {},

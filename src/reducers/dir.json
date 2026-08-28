@@ -74,9 +74,9 @@
               "Public Videos": {}
             }
           },
-          "Blue": {
+          "Arafath": {
             "type": "folder",
-            "name": "Blue",
+            "name": "Arafath",
             "info": {
               "spid": "%user%",
               "icon": "user"
@@ -165,7 +165,9 @@
                   "icon": "vid"
                 },
                 "data": {
-                  "porn-collection": {}
+                  "Screen Recordings": {},
+                  "Tutorials": {},
+                  "Projects": {}
                 }
               },
               "Github": {
@@ -173,24 +175,11 @@
                   "spid": "%github%"
                 },
                 "data": {
-                  "atomforces": {},
-                  "blueapi": {},
-                  "BlueBlog": {},
-                  "BlueBlogs---A-social-platform": {},
-                  "blueedgetechno": {},
-                  "blueedgetechno.github.io": {},
-                  "blueimage": {},
-                  "bluelab": {},
-                  "blueothello": {},
-                  "blueweb": {},
-                  "codeblue": {},
-                  "handwritten-digit-recognition": {},
-                  "jiosaavn": {},
-                  "jiosaavn-api": {},
-                  "minesweeper": {},
-                  "othello": {},
-                  "Saavn-Downloader": {},
-                  "Sanfoundary": {}
+                  "Windows-11-Web-OS": {},
+                  "React-Portfolio": {},
+                  "AI-Code-Studio": {},
+                  "Fullstack-Platform": {},
+                  "Modern-UI-Components": {}
                 }
               },
               "OneDrive": {

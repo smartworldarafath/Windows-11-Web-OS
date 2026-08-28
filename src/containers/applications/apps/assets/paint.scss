@@ -1,0 +1,18 @@
+.paintApp {
+  background: var(--bg1);
+  color: var(--txt-col);
+
+  .paintRibbon {
+    background: var(--bg2);
+  }
+
+  .canvasWrap {
+    background: #d8d8d8;
+  }
+}
+
+body[data-theme="dark"] .paintApp {
+  .canvasWrap {
+    background: #181818;
+  }
+}

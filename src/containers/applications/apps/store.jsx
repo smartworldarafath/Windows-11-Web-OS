@@ -191,7 +191,7 @@ export const MicroStore = () => {
             />
           </div>
           <div className="restWindow msfull win11Scroll" onScroll={frontScroll}>
-            {page == 0 ? <FrontPage /> : null}
+            {page == 0 ? <FrontPage action={action} /> : null}
             {page == 1 ? (
               <DownPage
                 action={action}
@@ -233,20 +233,10 @@ const DownPage = ({ action, apps }) => {
         >
           Games
         </div>
-        <div className="absolute right-0 mr-4 text-sm">
-          <a
-            href="https://win11react-docs.andrewstech.me/docs/Store/add-app"
-            className="catbtn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Add your own app
-          </a>
-        </div>
       </div>
       <div className="appscont mt-8">
         {apps.map((item, i) => {
-          if (item.type != catg && catg != "all") return;
+          if (item.type != catg && catg != "all") return null;
 
           var stars = geneStar(item);
           var reviews = Math.round(geneStar(item, 1) / 100) / 10;
@@ -254,10 +244,10 @@ const DownPage = ({ action, apps }) => {
           return (
             <div
               key={i}
-              className="ribcont p-4 pt-8 ltShad prtclk"
+              className="ribcont p-4 pt-8 ltShad prtclk handcr"
               onClick={action}
               data-action="page2"
-              data-payload={item.data.url}
+              data-payload={item.data?.url || item.name}
             >
               <Image
                 className="mx-4 mb-6 rounded"
@@ -322,12 +312,14 @@ const DetailPage = ({ app }) => {
     setTimeout(() => {
       installApp(app);
       setDown(3);
-    }, 3000);
+    }, 1500);
   };
 
   const refresh = () => window.location.reload();
   const openApp = () => {
-    dispatch({ type: apps[app.icon].action, payload: "full" });
+    if (apps[app.icon]) {
+      dispatch({ type: apps[app.icon].action, payload: "full" });
+    }
   };
 
   useEffect(() => {
@@ -347,13 +339,13 @@ const DetailPage = ({ app }) => {
         />
         <div className="flex flex-col items-center text-center relative">
           <div className="text-2xl font-semibold mt-6">{app.name}</div>
-          <div className="text-xs text-blue-500">Community</div>
+          <div className="text-xs text-blue-500">Official Package</div>
           {dstate == 0 ? (
             <div className="instbtn mt-12 mb-8 handcr" onClick={download}>
               Get
             </div>
           ) : null}
-          {dstate == 1 ? <div className="downbar mt-12 mb-8"></div> : null}
+          {dstate == 1 ? <div className="downbar mt-12 mb-8">Installing...</div> : null}
           {dstate == 2 ? (
             <div className="instbtn mt-12 mb-8 handcr" onClick={refresh}>
               Refresh
@@ -384,26 +376,25 @@ const DetailPage = ({ app }) => {
               <div className="text-xss mt-px pt-1">Ratings</div>
             </div>
           </div>
-          <div className="descnt text-xs relative w-0">{app.data.desc}</div>
+          <div className="descnt text-xs relative w-0">{app.data?.desc}</div>
         </div>
       </div>
       <div className="growcont flex flex-col">
-        {app.data.gallery && app.data.gallery.length ? (
+        {app.data?.gallery && app.data.gallery.length ? (
           <div className="briefcont py-2 pb-3">
             <div className="text-xs font-semibold">Screenshots</div>
             <div className="overflow-x-scroll win11Scroll mt-4">
               <div className="w-max flex">
-                {app.data.gallery &&
-                  app.data.gallery.map((x, i) => (
-                    <Image
-                      key={i}
-                      className="mr-2 rounded"
-                      h={250}
-                      src={x}
-                      ext
-                      err="img/asset/mixdef.jpg"
-                    />
-                  ))}
+                {app.data.gallery.map((x, i) => (
+                  <Image
+                    key={i}
+                    className="mr-2 rounded"
+                    h={250}
+                    src={x}
+                    ext
+                    err="img/asset/mixdef.jpg"
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -411,7 +402,7 @@ const DetailPage = ({ app }) => {
         <div className="briefcont py-2 pb-3">
           <div className="text-xs font-semibold">{t("store.description")}</div>
           <div className="text-xs mt-4">
-            <pre>{app.data.desc}</pre>
+            <pre>{app.data?.desc || "Experience top tier performance and versatility."}</pre>
           </div>
         </div>
         <div className="briefcont py-2 pb-3">
@@ -451,7 +442,7 @@ const DetailPage = ({ app }) => {
         <div className="briefcont py-2 pb-3">
           <div className="text-xs font-semibold">{t("store.features")}</div>
           <div className="text-xs mt-4">
-            <pre>{app.data.feat}</pre>
+            <pre>{app.data?.feat || "Verified by Microsoft\nHigh Performance"}</pre>
           </div>
         </div>
       </div>
@@ -459,7 +450,7 @@ const DetailPage = ({ app }) => {
   );
 };
 
-const FrontPage = (props) => {
+const FrontPage = ({ action }) => {
   const ribbon = useSelector((state) => state.globals.ribbon);
   const apprib = useSelector((state) => state.globals.apprib);
   const gamerib = useSelector((state) => state.globals.gamerib);
@@ -478,33 +469,23 @@ const FrontPage = (props) => {
       <div className="w-full overflow-x-scroll noscroll overflow-y-hidden -mt-16">
         <div className="storeRibbon">
           {ribbon &&
-            ribbon.map((x, i) => {
-              return x == "unescape" ? (
-                <a
-                  key={i}
-                  href="https://blueedge.me/unescape"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    className="mx-1 dpShad rounded"
-                    var={x}
-                    h={100}
-                    dir="store/float"
-                    src={x}
-                  />
-                </a>
-              ) : (
+            ribbon.map((x, i) => (
+              <div
+                key={i}
+                className="handcr inline-block"
+                onClick={action}
+                data-action="page2"
+                data-payload={x}
+              >
                 <Image
-                  key={i}
                   className="mx-1 dpShad rounded"
                   var={x}
                   h={100}
                   dir="store/float"
                   src={x}
                 />
-              );
-            })}
+              </div>
+            ))}
         </div>
       </div>
       <div
@@ -512,7 +493,7 @@ const FrontPage = (props) => {
         className="frontCont amzApps my-8 py-20 w-auto mx-8 \
         flex justify-between noscroll overflow-x-scroll overflow-y-hidden"
       >
-        <div className="flex w-64 flex-col text-gray-100 h-full px-8  ">
+        <div className="flex w-64 flex-col text-gray-100 h-full px-8">
           <div className="text-xl">{t("store.featured-app")}</div>
           <div className="text-xs mt-2">{t("store.featured-app.info")}</div>
         </div>
@@ -521,7 +502,13 @@ const FrontPage = (props) => {
             apprib.map((x, i) => {
               var stars = 3 + ((x.charCodeAt(0) + x.charCodeAt(1)) % 3);
               return (
-                <div key={i} className="ribcont rounded my-auto p-2 pb-2">
+                <div
+                  key={i}
+                  className="ribcont rounded my-auto p-2 pb-2 handcr"
+                  onClick={action}
+                  data-action="page2"
+                  data-payload={x}
+                >
                   <Image
                     className="mx-1 py-1 mb-2 rounded"
                     w={120}
@@ -572,7 +559,13 @@ const FrontPage = (props) => {
             gamerib.map((x, i) => {
               var stars = 3 + ((x.charCodeAt(0) + x.charCodeAt(1)) % 3);
               return (
-                <div key={i} className="ribcont rounded my-auto p-2 pb-2">
+                <div
+                  key={i}
+                  className="ribcont rounded my-auto p-2 pb-2 handcr"
+                  onClick={action}
+                  data-action="page2"
+                  data-payload={x}
+                >
                   <Image
                     className="mx-1 py-1 mb-2 rounded"
                     w={120}
@@ -623,7 +616,13 @@ const FrontPage = (props) => {
             movrib.map((x, i) => {
               var stars = 3 + ((x.charCodeAt(0) + x.charCodeAt(1)) % 3);
               return (
-                <div key={i} className="ribcont rounded my-auto p-2 pb-2">
+                <div
+                  key={i}
+                  className="ribcont rounded my-auto p-2 pb-2 handcr"
+                  onClick={action}
+                  data-action="page2"
+                  data-payload={x}
+                >
                   <Image
                     className="mx-1 py-1 mb-2 rounded"
                     w={120}
