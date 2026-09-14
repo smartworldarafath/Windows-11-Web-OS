@@ -149,8 +149,33 @@ export const DesktopApp = () => {
     };
   }, [draggingApp, positions]);
 
+  const [selectedApp, setSelectedApp] = useState(null);
+
+  const handleAppClick = (e, app) => {
+    e.stopPropagation();
+    setSelectedApp(app.name);
+  };
+
+  const handleAppDoubleClick = (e, app) => {
+    e.stopPropagation();
+    if (draggingApp && draggingApp.moved) return;
+    dispatch({
+      type: app.action,
+      payload: app.payload || "full",
+    });
+  };
+
+  const handleAppKeyDown = (e, app) => {
+    if (e.key === "Enter") {
+      dispatch({
+        type: app.action,
+        payload: app.payload || "full",
+      });
+    }
+  };
+
   return (
-    <div className="desktopCont">
+    <div className="desktopCont" onClick={() => setSelectedApp(null)}>
       {!deskApps.hide &&
         deskApps.apps.map((app, i) => {
           var pos = getAppPos(app, i);
@@ -159,17 +184,19 @@ export const DesktopApp = () => {
           return (
             <div
               key={app.name || i}
-              className={`dskApp ${isDraggingThis ? "isDragging" : ""}`}
+              className={`dskApp ${isDraggingThis ? "isDragging" : ""} ${selectedApp === app.name ? "selected" : ""}`}
               tabIndex={0}
               style={{
                 left: `${pos.left}px`,
                 top: `${pos.top}px`,
               }}
               onMouseDown={(e) => handleMouseDown(e, app, i)}
+              onClick={(e) => handleAppClick(e, app)}
+              onDoubleClick={(e) => handleAppDoubleClick(e, app)}
+              onKeyDown={(e) => handleAppKeyDown(e, app)}
             >
               <Icon
-                click={app.action}
-                className="dskIcon prtclk"
+                className="dskIcon"
                 src={app.icon}
                 payload={app.payload || "full"}
                 pr

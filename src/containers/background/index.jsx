@@ -136,11 +136,18 @@ export const LockScreen = (props) => {
         </div>
       </div>
       <div className="fadeinScreen" data-faded={!lock} data-unlock={unlocked}>
-        <Image
+        <img
           className="rounded-full overflow-hidden"
-          src="img/asset/prof.jpg"
-          w={200}
-          ext
+          style={{
+            width: "150px",
+            height: "150px",
+            objectFit: "cover",
+            borderRadius: "50%",
+            border: "2px solid rgba(255, 255, 255, 0.3)",
+            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.4)",
+          }}
+          src="img/asset/arafath.png"
+          alt={userName}
         />
         <div className="mt-2 text-2xl font-medium text-gray-200">
           {userName}

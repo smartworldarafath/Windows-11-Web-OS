@@ -260,14 +260,25 @@ export const StartMenu = () => {
             </div>
           </div>
           <div className="menuBar">
-            <div className="profile handcr">
-              <Icon
-                src="blueProf"
-                ui
-                rounded
-                width={26}
-                click="EXTERNAL"
-                payload="https://github.com/smartworldarafath/Windows-11-Web-OS"
+            <div
+              className="profile handcr"
+              onClick={() =>
+                window.open(
+                  "https://github.com/smartworldarafath/Windows-11-Web-OS",
+                  "_blank",
+                )
+              }
+            >
+              <img
+                src="img/asset/arafath.png"
+                alt={userName}
+                style={{
+                  width: "28px",
+                  height: "28px",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                }}
               />
               <div className="usName">{userName}</div>
             </div>
