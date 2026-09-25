@@ -139,7 +139,7 @@ export const Icon = (props) => {
               alt=""
             />
           </div>
-        ) : (
+        ) : props.src ? (
           <img
             width={props.width}
             height={props.height}
@@ -156,7 +156,7 @@ export const Icon = (props) => {
             }}
             alt=""
           />
-        )}
+        ) : null}
       </div>
     );
   }
