@@ -189,8 +189,6 @@ If you find **Windows 11 Web OS** helpful and want to support ongoing developmen
 
 ---
 
-## ☕ Support / Buy Me a Coffee & Become a Sponsor
-
 <div align="center">
 
 <a href="SUPPORT.md" target="_blank">
