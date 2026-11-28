@@ -9,6 +9,36 @@ Developed and maintained by **[Arafath Rahman](https://github.com/smartworldaraf
 
 ---
 
+
+<div align="center">
+
+### 🛠️ Languages & Tech Stack
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-js.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/light/pill-js.svg" />
+    <img src="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-js.svg" alt="JavaScript" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-css.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/light/pill-css.svg" />
+    <img src="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-css.svg" alt="CSS3" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-html.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/light/pill-html.svg" />
+    <img src="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-html.svg" alt="HTML5" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-rust.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/light/pill-rust.svg" />
+    <img src="https://raw.githubusercontent.com/smartworldarafath/smartworldarafath/main/assets/readme/dark/pill-rust.svg" alt="Rust" />
+  </picture>
+</p>
+
+</div>
+
 ## 📸 Screenshots & Preview
 
 ![Windows 11 Web OS Home](./public/img/home.jpg)
